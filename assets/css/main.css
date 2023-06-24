@@ -1,0 +1,176 @@
+:root{
+    --primaria: #ffffff;
+    --segundaria: rgb(33,37,41);
+    --terciaria: #dadada;
+}
+
+.myBackground3{
+    background-color: var(--terciaria);
+}
+.myNavbar{
+    background-color: var(--terciaria);
+    border-bottom: 1px var(--segundaria) solid;
+}
+
+.myLogo{
+    width: 40px;
+}
+
+.myBookBtn{
+    width: 20px;
+    margin-right: 3px;
+
+}
+
+.myBtn{
+    border: 1px var(--segundaria) solid;
+    background-color: var(--primaria);
+    color: var(--segundaria)
+}
+
+.myBtn:hover{
+    border: 1px var(--segundaria) solid;
+}
+
+.myIconUser{
+    width: 50px;
+}
+
+.myIconUser:hover{
+   cursor:pointer;
+}
+
+.myUserOptDiv{
+   margin-right: 15px;
+}
+
+.myIconMenu{
+    width: 30px;
+}
+
+.myIconMenu:hover{
+    color:var(--segundaria);
+    cursor:pointer;
+}
+
+.myBtnMenu{
+    border:none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background-color: var(--primaria);
+}
+
+.myBtnMenu:hover{
+    background-color:var(--terciaria);
+}
+
+.myBtnSide{
+    width: 250px;
+    height: 30px;
+    margin: 5px;
+    background-color: var(--primaria);
+    border:1px solid var(--segundaria);
+    box-shadow: 5px 3px 3px var(--segundaria);
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+.myBtnSide:hover{
+    background-color: var(--segundaria);
+    color:var(--primaria);
+}
+
+.myCategorias li{
+    list-style: none;
+}
+
+.myCategorias li:hover{
+    font-weight: bold;
+}
+
+.myCategorias a{
+    color:var(--segundaria);
+    text-decoration: none;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--primaria);
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: var(--segundaria);
+
+}
+::-webkit-scrollbar-thumb {
+    background: var(--segundaria);
+}
+
+.dropdown-item:active{
+    background-color: var(--segundaria);
+}
+
+.dropdown-item:hover{
+    background-color: var(--terciaria);
+}
+
+
+.myBackground{
+    background-color:  var(--primaria);
+}
+
+.myColor{
+    color:var(--segundaria);
+}
+
+.myCard{
+    width: 275px;
+    margin: 5px;
+}
+
+.myCapa{
+    width: 175px;
+    border:solid 3px var(--segundaria);
+}
+
+.myIconCard{
+    width: 20px;
+    margin-bottom: 7px;
+    margin-right: 5px;
+
+}
+
+.myIconsDiv{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.myCardFooter{
+    font-size: 12px;
+}
+
+.myColorText{
+    color:var(--segundaria);
+}
+
+.myCards{
+    margin-left: 15px;
+}
+
+.navMobile{
+    display: none;
+}
+
+@media(max-width:785px){
+    .navMobile{
+        display: block;
+    }
+
+    .navDesktop{
+        display: none;
+    }
+
+    .desativar{
+        display: none;
+    }
+    
+}
