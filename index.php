@@ -19,13 +19,23 @@
   </div>
 
 
-  <div class="container-fluid myBackground mt-3 row">
+  <div class="container-fluid myBackground mt-3 row d-flex justify-content-center">
  
-  <div>
-    <?php include('./elements/carousel.php') //inclui o card na pasta 'elements' ?>
+  <div class="row">
+    <?php include('./elements/carousel.php') //inclui o carousel na pasta 'elements' ?>
   </div>
- 
-    <?php include('./elements/card.php') //inclui o card na pasta 'elements' ?>
+
+  <div class="mySearch d-flex mt-3 rounded">
+     <?php include('./elements/search.php') //inclui o card na pasta 'elements' ?>
+  </div>
+
+
+    
+   
+    <div class="row">    <?php include('./elements/card.php') //inclui o card na pasta 'elements' ?></div>
+
+
+
 
   </div>
 </body>

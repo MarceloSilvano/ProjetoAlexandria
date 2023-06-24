@@ -14,9 +14,9 @@
                 <button class="btn btn-light myBtn"><img class="myBookBtn" src="./assets/svg/book.png" alt="">Enviar livro</button>
                 <img class="myIconUser" data-bs-toggle="dropdown" src="./assets/svg/iconUser.png" alt="">
                 <ul class="dropdown-menu myBackground">
-                  <li><a class="dropdown-item myColor" href="#"><img class="myBookBtn" src="./assets/svg/account.png" alt=""> Minha conta</a></li>
-                  <li><a class="dropdown-item myColor" href="#"><img class="myBookBtn" src="./assets/svg/config.png" alt=""> Configurações</a></li>
-                  <li><a class="dropdown-item myColor" href="#"><img class="myBookBtn" src="./assets/svg/logout.png" alt=""> Sair</a></li>
+                  <li><a class="dropdown-item myColor" href="#"><img class="myBookBtn" src="./assets/svg/account.svg" alt=""> Minha conta</a></li>
+                  <li><a class="dropdown-item myColor" href="#"><img class="myBookBtn" src="./assets/svg/config.svg" alt=""> Configurações</a></li>
+                  <li><a class="dropdown-item myColor" href="#"><img class="myBookBtn" src="./assets/svg/logout.svg" alt=""> Sair</a></li>
                 </ul>
               </div>
           </div>

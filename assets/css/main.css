@@ -2,6 +2,8 @@
     --primaria: #ffffff;
     --segundaria: rgb(33,37,41);
     --terciaria: #dadada;
+    --terciaria2: #bebebe;
+    --formulario: #ffffff;
 }
 
 .myBackground3{
@@ -29,7 +31,7 @@
 }
 
 .myBtn:hover{
-    border: 1px var(--segundaria) solid;
+    border: 1px var(--primaria) solid;
 }
 
 .myIconUser{
@@ -173,4 +175,24 @@
         display: none;
     }
     
+}
+
+.mySearch{
+    width:700px;
+    background-color: var(--segundaria);
+    color: var(--primaria);
+}
+
+.myForm{
+    width: 500px;
+    background-color: var(--formulario);
+    border-radius: 5px;
+}
+
+.mySearchBtn{
+    background-color: var(--terciaria);
+}
+
+.mySearchBtn:hover{
+    background-color: var(--terciaria2);
 }
