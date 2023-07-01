@@ -11,28 +11,28 @@
 </head>
 <body class="myBackground">
   <div class="navDesktop">
-    <?php include('./elements/navbar.php') //inclui o código do navbar na pasta 'elements' ?>
+    <?php include('./elements/navbar.php') //inclui o código do navbar ?>
   </div>
 
   <div class="navMobile">
-    <?php include('./elements/navbarMobile.php') //inclui o código do navbar na pasta 'elements' ?>
+    <?php include('./elements/navbarMobile.php') //inclui o código do navbar versão mobile ?>
   </div>
 
 
   <div class="container-fluid myBackground mt-3 row d-flex justify-content-center">
  
   <div class="row">
-    <?php include('./elements/carousel.php') //inclui o carousel na pasta 'elements' ?>
+    <?php include('./elements/carousel.php') //inclui o carousel ?>
   </div>
 
   <div class="mySearch d-flex mt-3 rounded">
-     <?php include('./elements/search.php') //inclui o card na pasta 'elements' ?>
+     <?php include('./elements/search.php') //inclui a barra de pesquisa ?>
   </div>
 
 
     
    
-    <div class="row">    <?php include('./elements/card.php') //inclui o card na pasta 'elements' ?></div>
+    <div class="row">    <?php include('./elements/card.php') //inclui os cards ?></div>
 
 
 
