@@ -1,5 +1,5 @@
 <?php
-include('./phpActions/util.php');
+include('./phpFunctions/util.php');
 
 $sql = "SELECT * FROM `tb_categorias`";
 $query = mysqli_query($conexao, $sql);
