@@ -2,21 +2,21 @@
 <nav class="navbar navbar-expand-sm navbar-dark myNavbar myBackground">
         <div class="container-fluid">
           <div>
-            <a class="navbar-brand" href="../index.php"><img class="myLogo" src="./assets/svg/logo.png" alt="logo"></a>
+            <a class="navbar-brand" href="../index.php"><img class="myLogo" src="./assets/png/logo.png" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <button class="myBtnMenu"><img class="myIconMenu" src="./assets/svg/menu.png" data-bs-toggle="offcanvas" data-bs-target="#offcanva"></button>
+            <button class="myBtnMenu"><img class="myIconMenu" src="./assets/png/menu.png" data-bs-toggle="offcanvas" data-bs-target="#offcanva"></button>
           </div>
-          <img class="row d-flex justify-content-center" style="width:464px" src="./assets/svg/banner.png" alt="">
+          <img class="row d-flex justify-content-center" style="width:464px" src="./assets/png/banner.png" alt="">
           <div>
             <div class="dropdown myUserOptDiv myBackground">
-                <button class="btn btn-light myBtn"><img class="myBookBtn" src="./assets/svg/book.png" alt="">Enviar livro</button>
-                <img class="myIconUser" data-bs-toggle="dropdown" src="./assets/svg/iconUser.png" alt="">
+                <button class="btn btn-light myBtn"><img class="myBookBtn" src="./assets/png/book.png" alt="">Enviar livro</button>
+                <img class="myIconUser" data-bs-toggle="dropdown" src="./assets/png/iconUser.png" alt="">
                 <ul class="dropdown-menu myBackground">
-                  <li><a class="dropdown-item myColor" href="#"><img class="myBookBtn" src="./assets/svg/account.svg" alt=""> Minha conta</a></li>
-                  <li><a class="dropdown-item myColor" href="#"><img class="myBookBtn" src="./assets/svg/config.svg" alt=""> Configurações</a></li>
-                  <li><a class="dropdown-item myColor" href="#"><img class="myBookBtn" src="./assets/svg/logout.svg" alt=""> Sair</a></li>
+                  <li><a class="dropdown-item myColor" href="#"><img class="myBookBtn" src="./assets/png/account.svg" alt=""> Minha conta</a></li>
+                  <li><a class="dropdown-item myColor" href="#"><img class="myBookBtn" src="./assets/png/config.svg" alt=""> Configurações</a></li>
+                  <li><a class="dropdown-item myColor" href="#"><img class="myBookBtn" src="./assets/png/logout.svg" alt=""> Sair</a></li>
                 </ul>
               </div>
           </div>

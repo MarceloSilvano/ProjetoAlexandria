@@ -14,8 +14,8 @@
       <div class="card-footer myCardFooter"> 
         H. P. Lovecraft só que grande gigante
         <div class="myIconsDiv d-flex">
-          <img class="myIconCard" src="./assets/svg/like.png" alt="">95%
-          <img class="myIconCard" src="./assets/svg/downloads.png" style="    margin-left: 15px;" alt="">94
+          <img class="myIconCard" src="./assets/png/like.png" alt="">95%
+          <img class="myIconCard" src="./assets/png/downloads.png" style="    margin-left: 15px;" alt="">94
         </div>
 </div>
 </div>
@@ -25,8 +25,8 @@
       <div class="card-footer myCardFooter"> 
         H. P. Lovecraft só que grande gigante
         <div class="myIconsDiv d-flex">
-          <img class="myIconCard" src="./assets/svg/like.png" alt="">95%
-          <img class="myIconCard" src="./assets/svg/downloads.png" style="    margin-left: 15px;" alt="">94
+          <img class="myIconCard" src="./assets/png/like.png" alt="">95%
+          <img class="myIconCard" src="./assets/png/downloads.png" style="    margin-left: 15px;" alt="">94
         </div>
 </div>
 </div>
@@ -36,8 +36,8 @@
       <div class="card-footer myCardFooter"> 
         H. P. Lovecraft só que grande gigante
         <div class="myIconsDiv d-flex">
-          <img class="myIconCard" src="./assets/svg/like.png" alt="">95%
-          <img class="myIconCard" src="./assets/svg/downloads.png" style="    margin-left: 15px;" alt="">94
+          <img class="myIconCard" src="./assets/png/like.png" alt="">95%
+          <img class="myIconCard" src="./assets/png/downloads.png" style="    margin-left: 15px;" alt="">94
         </div>
 </div>
 </div>
@@ -47,8 +47,8 @@
       <div class="card-footer myCardFooter"> 
         H. P. Lovecraft só que grande gigante
         <div class="myIconsDiv d-flex">
-          <img class="myIconCard" src="./assets/svg/like.png" alt="">95%
-          <img class="myIconCard" src="./assets/svg/downloads.png" style="    margin-left: 15px;" alt="">94
+          <img class="myIconCard" src="./assets/png/like.png" alt="">95%
+          <img class="myIconCard" src="./assets/png/downloads.png" style="    margin-left: 15px;" alt="">94
         </div>
 </div>
 </div>
@@ -64,8 +64,8 @@
       <div class="card-footer myCardFooter"> 
         H. P. Lovecraft só que grande gigante
         <div class="myIconsDiv d-flex">
-          <img class="myIconCard" src="./assets/svg/like.png" alt="">95%
-          <img class="myIconCard" src="./assets/svg/downloads.png" style="    margin-left: 15px;" alt="">94
+          <img class="myIconCard" src="./assets/png/like.png" alt="">95%
+          <img class="myIconCard" src="./assets/png/downloads.png" style="    margin-left: 15px;" alt="">94
         </div>
 </div>
 </div>
@@ -75,8 +75,8 @@
       <div class="card-footer myCardFooter"> 
         H. P. Lovecraft só que grande gigante
         <div class="myIconsDiv d-flex">
-          <img class="myIconCard" src="./assets/svg/like.png" alt="">95%
-          <img class="myIconCard" src="./assets/svg/downloads.png" style="    margin-left: 15px;" alt="">94
+          <img class="myIconCard" src="./assets/png/like.png" alt="">95%
+          <img class="myIconCard" src="./assets/png/downloads.png" style="    margin-left: 15px;" alt="">94
         </div>
 </div>
 </div>
@@ -86,8 +86,8 @@
       <div class="card-footer myCardFooter"> 
         H. P. Lovecraft só que grande gigante
         <div class="myIconsDiv d-flex">
-          <img class="myIconCard" src="./assets/svg/like.png" alt="">95%
-          <img class="myIconCard" src="./assets/svg/downloads.png" style="    margin-left: 15px;" alt="">94
+          <img class="myIconCard" src="./assets/png/like.png" alt="">95%
+          <img class="myIconCard" src="./assets/png/downloads.png" style="    margin-left: 15px;" alt="">94
         </div>
 </div>
 </div>
@@ -97,8 +97,8 @@
       <div class="card-footer myCardFooter"> 
         H. P. Lovecraft só que grande gigante
         <div class="myIconsDiv d-flex">
-          <img class="myIconCard" src="./assets/svg/like.png" alt="">95%
-          <img class="myIconCard" src="./assets/svg/downloads.png" style="    margin-left: 15px;" alt="">94
+          <img class="myIconCard" src="./assets/png/like.png" alt="">95%
+          <img class="myIconCard" src="./assets/png/downloads.png" style="    margin-left: 15px;" alt="">94
         </div>
 </div>
 </div>
@@ -114,8 +114,8 @@
       <div class="card-footer myCardFooter"> 
         H. P. Lovecraft só que grande gigante
         <div class="myIconsDiv d-flex">
-          <img class="myIconCard" src="./assets/svg/like.png" alt="">95%
-          <img class="myIconCard" src="./assets/svg/downloads.png" style="    margin-left: 15px;" alt="">94
+          <img class="myIconCard" src="./assets/png/like.png" alt="">95%
+          <img class="myIconCard" src="./assets/png/downloads.png" style="    margin-left: 15px;" alt="">94
         </div>
 </div>
 </div>
@@ -125,8 +125,8 @@
       <div class="card-footer myCardFooter"> 
         H. P. Lovecraft só que grande gigante
         <div class="myIconsDiv d-flex">
-          <img class="myIconCard" src="./assets/svg/like.png" alt="">95%
-          <img class="myIconCard" src="./assets/svg/downloads.png" style="    margin-left: 15px;" alt="">94
+          <img class="myIconCard" src="./assets/png/like.png" alt="">95%
+          <img class="myIconCard" src="./assets/png/downloads.png" style="    margin-left: 15px;" alt="">94
         </div>
 </div>
 </div>
@@ -136,8 +136,8 @@
       <div class="card-footer myCardFooter"> 
         H. P. Lovecraft só que grande gigante
         <div class="myIconsDiv d-flex">
-          <img class="myIconCard" src="./assets/svg/like.png" alt="">95%
-          <img class="myIconCard" src="./assets/svg/downloads.png" style="    margin-left: 15px;" alt="">94
+          <img class="myIconCard" src="./assets/png/like.png" alt="">95%
+          <img class="myIconCard" src="./assets/png/downloads.png" style="    margin-left: 15px;" alt="">94
         </div>
 </div>
 </div>
@@ -147,8 +147,8 @@
       <div class="card-footer myCardFooter"> 
         H. P. Lovecraft só que grande gigante
         <div class="myIconsDiv d-flex">
-          <img class="myIconCard" src="./assets/svg/like.png" alt="">95%
-          <img class="myIconCard" src="./assets/svg/downloads.png" style="    margin-left: 15px;" alt="">94
+          <img class="myIconCard" src="./assets/png/like.png" alt="">95%
+          <img class="myIconCard" src="./assets/png/downloads.png" style="    margin-left: 15px;" alt="">94
         </div>
 </div>
 </div>
