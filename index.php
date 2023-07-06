@@ -1,3 +1,7 @@
+
+<?php
+  include('./phpFunctions/util.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,7 +15,8 @@
 </head>
 <body class="Background">
   <div class="navDesktop">
-    <?php include('./elements/navbar.php') //inclui o código do navbar ?>
+    <?php 
+    include('./elements/navbar.php') //inclui o código do navbar ?>
   </div>
 
   <div class="navMobile">

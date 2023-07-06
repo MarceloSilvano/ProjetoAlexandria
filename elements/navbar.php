@@ -1,6 +1,6 @@
 <!--Navbar Inicio-->
 <?php
- if(isset($_SESSION['user'])){
+ if(isset($_SESSION['login'])){
     $linkUserIcon = " data-bs-toggle='dropdown'";
  }else{
   $linkUserIcon = " data-bs-toggle='modal' data-bs-target='#loginModal'";
@@ -23,7 +23,7 @@
                 <ul class="dropdown-menu Background">
                   <li><a class="dropdown-item Color" href="#"><img class="iconBtn" src="./assets/png/account.svg" alt=""> Minha conta</a></li>
                   <li><a class="dropdown-item Color" href="#"><img class="iconBtn" src="./assets/png/config.svg" alt=""> Configurações</a></li>
-                  <li><a class="dropdown-item Color" href="#"><img class="iconBtn" src="./assets/png/logout.svg" alt=""> Sair</a></li>
+                  <li><a class="dropdown-item Color" href="./phpActions/logout.php"><img class="iconBtn" src="./assets/png/logout.svg" alt=""> Sair</a></li>
                 </ul>
               </div>
           </div>
@@ -70,24 +70,24 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-      <form action="/action_page.php">
-  <div class="mb-3 mt-3">
-    <label for="email" class="form-label">Nome de usuário ou e-mail:</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-  </div>
-  <div class="mb-3">
-    <label for="pwd" class="form-label">Senha:</label>
-    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
-  </div>
-  
+      <form action="./phpActions/logar.php" method="POST">
+          <div class="mb-3 mt-3">
+            <label for="email" class="form-label">Nome de usuário ou e-mail:</label>
+            <input type="text" class="form-control" id="email" placeholder="marcelo@email.com" name="user">
+          </div>
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Senha:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="senha123" name="pswd">
+          </div>
+            <p>Ainda não possui uma conta? <a href="./cadastrar.php">Crie uma aqui</a></p>
+              </div>
 
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-light btnNav">Login</button>
-      </div>
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-light btnNav">Login</button>
+              </div>
       </form>
+     
     </div>
   </div>
 </div>
