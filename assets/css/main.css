@@ -1,97 +1,112 @@
 :root{
+    --titulo: #ffffff;
+    --fundo: #ffffff;
     --primaria: #ffffff;
+
+    --texto: #ffffff;
     --segundaria: rgb(33,37,41);
     --terciaria: #dadada;
     --terciaria2: #bebebe;
     --formulario: #ffffff;
-}
 
-.myBackground3{
-    background-color: var(--terciaria);
-}
-.myNavbar{
-    background-color: var(--terciaria);
-    border-bottom: 1px var(--segundaria) solid;
-}
+    --navbar: #ffffff;
+    --botaoNavHover: #dadada;
+    --botaoNavText: #000000;
+    --botaoNavBorder: #000000;
 
-.myLogo{
-    width: 40px;
-}
-
-.myBookBtn{
-    width: 20px;
-    margin-right: 3px;
+    --botaoSidebar: #ffffff;
+    --botaoSidebarBorder: #000000;
+    --botaoSidebarShadow: #000000;
+    --botaoSidebarHover: rgb(33,37,41);
+    --botaoSidebarHoverText: rgb(255, 255, 255);
 
 }
 
-.myBtn{
-    border: 1px var(--segundaria) solid;
-    background-color: var(--primaria);
-    color: var(--segundaria)
-}
-
-.myBtn:hover{
-    border: 1px var(--primaria) solid;
-}
-
-.myIconUser{
-    width: 50px;
-}
-
-.myIconUser:hover{
-   cursor:pointer;
-}
-
-.myUserOptDiv{
-   margin-right: 15px;
-}
-
-.myIconMenu{
-    width: 30px;
-}
-
-.myIconMenu:hover{
-    color:var(--segundaria);
-    cursor:pointer;
-}
-
-.myBtnMenu{
+.BtnMenu{ /* Botão redondo que abre o sidebar */
     border:none;
     border-radius: 50%;
     width: 45px;
     height: 45px;
-    background-color: var(--primaria);
+    background-color: var(--navbar);
 }
 
-.myBtnMenu:hover{
-    background-color:var(--terciaria);
+.BtnMenu:hover{ /* Botão redondo que abre o sidebar */
+    background-color:var(--botaoNavHover);
 }
 
-.myBtnSide{
+.iconBtn{ /*icones*/
+    width: 20px;
+    margin-right: 3px;
+}
+
+.btnNav{ /*botão do navbar*/ 
+    border: 1px var(--botaoNavBorder) solid;
+    background-color: var(--navbar);
+    color: var(--botaoNavText)
+}
+
+.btnNav:hover{ /*botão do navbar*/ 
+    border: 1px var(--botaoNavBorder) solid;
+}
+ 
+.BtnSide{ /*botão do sidebar*/ 
     width: 250px;
     height: 30px;
     margin: 5px;
-    background-color: var(--primaria);
-    border:1px solid var(--segundaria);
-    box-shadow: 5px 3px 3px var(--segundaria);
+    background-color: var(--botaoSidebar);
+    border:1px solid var(--botaoSidebarBorder);
+    box-shadow: 5px 3px 3px var(--botaoSidebarShadow);
     font-size: 16px;
     border-radius: 20px;
 }
 
-.myBtnSide:hover{
-    background-color: var(--segundaria);
-    color:var(--primaria);
+.BtnSide:hover{ /*botão do sidebar*/ 
+    background-color: var(--botaoSidebarHover);
+    color:var(--botaoSidebarHoverText);
 }
 
-.myCategorias li{
+.Navbar{
+    background-color: var(--navbar);
+    border-bottom: 1px var(--botaoNavBorder) solid;
+}
+
+.Logo{
+    width: 40px;
+}
+
+
+
+.IconUser{
+    width: 50px;
+}
+
+.IconUser:hover{
+   cursor:pointer;
+}
+
+.UserOptDiv{
+   margin-right: 15px;
+}
+
+.IconMenu{
+    width: 30px;
+}
+
+.IconMenu:hover{
+    color:var(--segundaria);
+    cursor:pointer;
+}
+
+
+.Categorias li{
     list-style: none;
 }
 
-.myCategorias li:hover{
+.Categorias li:hover{
     font-weight: bold;
 }
 
-.myCategorias a{
+.Categorias a{
     color:var(--segundaria);
     text-decoration: none;
 }
@@ -116,45 +131,45 @@
 }
 
 
-.myBackground{
+.Background{
     background-color:  var(--primaria);
 }
 
-.myColor{
+.Color{
     color:var(--segundaria);
 }
 
-.myCard{
+.Card{
     width: 275px;
     margin: 5px;
 }
 
-.myCapa{
+.Capa{
     width: 175px;
     border:solid 3px var(--segundaria);
 }
 
-.myIconCard{
+.IconCard{
     width: 20px;
     margin-bottom: 7px;
     margin-right: 5px;
 
 }
 
-.myIconsDiv{
+.IconsDiv{
     font-weight: bold;
     font-size: 18px;
 }
 
-.myCardFooter{
+.CardFooter{
     font-size: 12px;
 }
 
-.myColorText{
+.ColorText{
     color:var(--segundaria);
 }
 
-.myCards{
+.Cards{
     margin-left: 15px;
 }
 
@@ -177,22 +192,22 @@
     
 }
 
-.mySearch{
+.Search{
     width:700px;
     background-color: var(--segundaria);
     color: var(--primaria);
 }
 
-.myForm{
+.Form{
     width: 500px;
     background-color: var(--formulario);
     border-radius: 5px;
 }
 
-.mySearchBtn{
+.SearchBtn{
     background-color: var(--terciaria);
 }
 
-.mySearchBtn:hover{
+.SearchBtn:hover{
     background-color: var(--terciaria2);
 }

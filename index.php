@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Alexandria</title>
 </head>
-<body class="myBackground">
+<body class="Background">
   <div class="navDesktop">
     <?php include('./elements/navbar.php') //inclui o código do navbar ?>
   </div>
@@ -19,20 +19,20 @@
   </div>
 
 
-  <div class="container-fluid myBackground mt-3 row d-flex justify-content-center">
+  <div class="container-fluid Background mt-3 row d-flex justify-content-center">
  
   <div class="row">
     <?php include('./elements/carousel.php') //inclui o carousel ?>
   </div>
 
-  <div class="mySearch d-flex mt-3 rounded">
+  <div class="Search d-flex mt-3 rounded">
      <?php include('./elements/search.php') //inclui a barra de pesquisa ?>
   </div>
 
 
     
    
-    <div class="row">    <?php include('./elements/card.php') //inclui os cards ?></div>
+    <div class="row">    <?php include('./elements/tb_livros.php') //inclui os livros ?></div>
 
 
 

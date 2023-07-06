@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-sm bg-light navbar-light myNavbar">
+<nav class="navbar navbar-expand-sm bg-light navbar-light Navbar">
   <div class="container-fluid">
-  <a class="navbar-brand" href="../index.php"><img class="myLogo" src="./assets/png/logo.png" alt="logo"></a>
+  <a class="navbar-brand" href="../index.php"><img class="Logo" src="./assets/png/logo.png" alt="logo"></a>
   <img class="row d-flex justify-content-center" style="width:200px;" src="./assets/png/banner.png" alt="">
    <a href="../index.php"> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"></a>
       <span class="navbar-toggler-icon"></span>
