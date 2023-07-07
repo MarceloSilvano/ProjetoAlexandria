@@ -28,4 +28,6 @@ if($dbInfo['username']==$usuario&&$dbInfo['password']==$senha){
 
 var_dump($_SESSION['login']);
 
-
+if(!isset($_POST['user'])){
+    header('location:../login.php');
+}

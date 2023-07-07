@@ -40,21 +40,28 @@
     <?php include('./elements/navbarMobile.php') //inclui o código do navbar versão mobile ?>
   </div>
 
-  <div class="container-fluid Background row d-flex justify-content-center loginBox">
+  <div class="container-fluid Background row d-flex justify-content-center mt-5">
 
 
-  <form action="./phpActions/logar.php" class="<?php echo $classError ?>" style="width:400px" method="POST">
+  <form action="./phpActions/logar.php" class="<?php echo $classError ?> was-validated" style="width:400px" method="POST">
           <div class="mb-3 mt-3">
-            <label for="email" class="form-label ">Nome de usuário:</label>
-            <input type="text" class="form-control" id="email" placeholder="marcelo123" name="user" required>
+            <label for="user" class="form-label ">Nome de usuário:</label>
+            <input type="text" class="form-control" id="user" placeholder="marcelo123" name="user" required>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="email" class="form-label ">E-mail:</label>
+            <input type="email" class="form-control" id="email" placeholder="marcelo123" name="user" required>
           </div>
           <div class="mb-3">
             <label for="pwd" class="form-label">Senha:</label>
             <input type="password" class="form-control" id="pwd" placeholder="senha123" name="pswd" required>
           </div>
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Repetir a senha:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="senha123" name="pswd" required>
+          </div>
             <div class="d-flex justify-content-center">
-            <button href="index.php" class="btn btn-light btnNav m-2" style="width:150px;height:45px">Nova conta</button>
-            <button type="submit" class="btn btn-light btnNav m-2" style="width:150px;height:45px">Login</button>
+            <button href="index.php" class="btn btn-light btnNav m-2" style="width:150px;height:45px">Criar conta</button>
             </div>
               </div>
 
