@@ -211,3 +211,7 @@
 .SearchBtn:hover{
     background-color: var(--terciaria2);
 }
+
+.loginBox{
+    margin-top:10%;
+}

@@ -15,15 +15,17 @@ echo $dbInfo['username']."<br>";
 echo $dbInfo['password'];
 
 if($dbInfo['username']==$usuario&&$dbInfo['password']==$senha){
-    $_SESSION['login'] = $usuario;
+    $_SESSION['login']= $usuario;
+    $_SESSION['msgLogin']= true;
+    header('location:../index.php');
     if(isset($_SESSION['erro'])){
         unset($_SESSION['erro']);
     }
 }else{
     $_SESSION['erro'] = "Login ou senha inválidos!";
+    header('location:../login.php');
 }
 
 var_dump($_SESSION['login']);
 
 
-header('location:../index.php');

@@ -32,19 +32,26 @@
     <?php include('./elements/navbarMobile.php') //inclui o código do navbar versão mobile ?>
   </div>
 
-  <div class="container-fluid Background mt-3 row d-flex justify-content-center">
+  <div class="container-fluid Background row d-flex justify-content-center loginBox">
+
  
-  <div class="row">
-    <?php include('./elements/carousel.php') //inclui o carousel ?>
-  </div>
+  <form action="./phpActions/logar.php" style="width:400px" method="POST">
+  
+          <div class="mb-3 mt-3">
+            <label for="email" class="form-label">Nome de usuário ou e-mail:</label>
+            <input type="text" class="form-control" id="email" placeholder="marcelo@email.com" name="user">
+          </div>
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Senha:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="senha123" name="pswd">
+          </div>
+            <div class="d-flex justify-content-center">
+            <button href="index.php" class="btn btn-light btnNav m-2" style="width:150px;height:45px">Nova conta</button>
+            <button type="submit" class="btn btn-light btnNav m-2" style="width:150px;height:45px">Login</button>
+            </div>
+              </div>
 
-  <div class="Search d-flex mt-3 rounded">
-     <?php include('./elements/search.php') //inclui a barra de pesquisa ?>
-  </div>
-   
-    <div class="row">    <?php include('./elements/tb_livros.php') //inclui os livros ?></div>
-  </div>
-
+      </form>
 </div>
 </body>
 </html>

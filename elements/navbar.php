@@ -9,7 +9,7 @@
 <nav class="navbar navbar-expand-sm navbar-dark Navbar">
         <div class="container-fluid">
           <div>
-            <a class="navbar-brand" href="../index.php"><img class="Logo" src="./assets/png/logo.png" alt="logo"></a>
+            <a class="navbar-brand" href="index.php"><img class="Logo" src="./assets/png/logo.png" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
               <span class="navbar-toggler-icon"></span>
             </button>
