@@ -215,3 +215,37 @@
 .loginBox{
     margin-top:10%;
 }
+
+.usernameError{
+    font-size: 12px;
+    color:red;
+}
+
+.invalid{
+    border: red 1px solid;
+}
+
+.invalid:focus{
+    border: red 1px solid;
+    box-shadow: 0 0 red;
+}
+
+.invalid1{
+    border: red 1px solid;
+}
+
+.invalid1:focus{
+    border: red 1px solid;
+    box-shadow: 0 0 red;
+}
+
+.invalid2{
+    border: red 1px solid;
+}
+
+.invalid2:focus{
+    border: red 1px solid;
+    box-shadow: 0 0 red;
+}
+
+
