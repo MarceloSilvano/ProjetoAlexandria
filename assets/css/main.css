@@ -239,13 +239,9 @@
     box-shadow: 0 0 red;
 }
 
-.invalid2{
-    border: red 1px solid;
+.msgBox{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
 }
-
-.invalid2:focus{
-    border: red 1px solid;
-    box-shadow: 0 0 red;
-}
-
-

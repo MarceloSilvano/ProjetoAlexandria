@@ -1,12 +1,7 @@
 
 <?php
   include('./phpFunctions/util.php');
-  if(isset($_SESSION['login'])){
-    if($_SESSION['msgLogin']==true){
-      include('./elements/alert-login.php');
-      $_SESSION['msgLogin'] = false;
-    }
-  }
+ 
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" >
@@ -21,6 +16,8 @@
     <title>Alexandria</title>
 </head>
 <body class="Background" >
+<?php 
+    include('./elements/msgBox.php') //inclui a caixa de mensagens ?>
   
   <div class="navDesktop">
     <?php 

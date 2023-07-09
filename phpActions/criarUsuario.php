@@ -61,4 +61,16 @@ if($valido==true){
 }else{
     echo "false";
 }
+
+if($valido==true){
+    $senha = md5($senha);
+    $sqlCreate = "INSERT INTO tb_users (username, password, email, foto, qntLivros, dataCriacao) VALUES ('$user','$senha','$email',NULL,0,'".date('Y-m-d')."')";
+    $queryCreate = mysqli_query($conexao,$sqlCreate);
+}
+echo $sqlCreate;
+if(mysqli_affected_rows($conexao)>0){
+    echo "conta criada com sucesso"; 
+}else{
+    echo "erro ao criar nova conta";
+}
 ?>
