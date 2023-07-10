@@ -1,5 +1,5 @@
 # ProjetoAlexandria
-Introdução:
+
 O Projeto Alexandria é uma iniciativa voltada para o estudo e aprimoramento de programação web. 
 Seu objetivo principal é democratizar o acesso aos livros e, ao mesmo tempo, proporcionar aos estudantes envolvidos 
 uma oportunidade de desenvolver suas habilidades no campo da programação.
