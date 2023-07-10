@@ -29,7 +29,7 @@
     <title>Alexandria</title>
 </head>
 <body class="Background" >
-  
+<?php include('./elements/msgBox.php') //inclui a caixa de mensagens ?>
   <div class="navDesktop">
     <?php 
     include('./elements/navbar.php') //inclui o código do navbar ?>

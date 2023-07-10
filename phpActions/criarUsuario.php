@@ -66,11 +66,20 @@ if($valido==true){
     $senha = md5($senha);
     $sqlCreate = "INSERT INTO tb_users (username, password, email, foto, qntLivros, dataCriacao) VALUES ('$user','$senha','$email',NULL,0,'".date('Y-m-d')."')";
     $queryCreate = mysqli_query($conexao,$sqlCreate);
+    header('location:../login.php');
+}else{
+    $_SESSION['cadastroErro']=true;
+    header('location:../cadastrar.php');
+
 }
 echo $sqlCreate;
 if(mysqli_affected_rows($conexao)>0){
     echo "conta criada com sucesso"; 
+    $_SESSION['cadastroConcluido']=true;
+
 }else{
     echo "erro ao criar nova conta";
+    header('location:../cadastrar.php');
+
 }
 ?>

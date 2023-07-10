@@ -1,7 +1,8 @@
 
 <?php
   include('./phpFunctions/util.php');
- 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" >
@@ -18,7 +19,6 @@
 <body class="Background" >
 <?php 
     include('./elements/msgBox.php') //inclui a caixa de mensagens ?>
-  
   <div class="navDesktop">
     <?php 
     include('./elements/navbar.php') //inclui o código do navbar ?>
@@ -36,11 +36,13 @@
   </div>
 
   <div class="Search d-flex mt-3 rounded">
-     <?php include('./elements/search.php') //inclui a barra de pesquisa ?>
+     <?php include('./elements/search.php') ;//inclui a barra de pesquisa ?>
+     
   </div>
-   
     <div class="row">    <?php include('./elements/tb_livros.php') //inclui os livros ?></div>
   </div>
+  
+
 
 </div>
 </body>
