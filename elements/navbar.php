@@ -2,8 +2,20 @@
 <?php
  if(isset($_SESSION['login'])){
     $linkUserIcon = " data-bs-toggle='dropdown'";
+
+    $username = $_SESSION['login'];
+    $sqlUser = "SELECT * FROM `tb_users` WHERE username = '$username'";
+    $queryUser = mysqli_query($conexao,$sqlUser);
+    $userData = mysqli_fetch_assoc($queryUser);
+
+    if($userData['foto']<>NULL){
+      $iconUser = './phpActions/uploadsFoto/'.$userData['foto'];
+    }else{
+      $iconUser = "./assets/png/iconUser.png";
+    }
  }else{
   $linkUserIcon = " data-bs-toggle='modal' data-bs-target='#loginModal'";
+  $iconUser = "./assets/png/iconUser.png";
  }
 ?>
 <nav class="navbar navbar-expand-sm navbar-dark Navbar">
@@ -13,13 +25,13 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <button class="BtnMenu"><img class="IconMenu" src="./assets/png/menu.png" data-bs-toggle="offcanvas" data-bs-target="#offcanva"></button>
+            <button class="BtnMenu"><img class="IconMenu"  src="./assets/png/menu.png" data-bs-toggle="offcanvas" data-bs-target="#offcanva"></button>
           </div>
-          <img class="row d-flex justify-content-center" style="width:464px" src="./assets/png/banner.png" alt="">
+          <img class="row d-flex justify-content-center" style="width:464px;" src="./assets/png/banner.png" alt="">
           <div>
             <div class="dropdown UserOptDiv">
                 <button class="btn btn-light btnNav"><img class="iconBtn" src="./assets/png/book.png" alt="">Enviar livro</button>
-                <img class="IconUser" <?php echo $linkUserIcon ?> src="./assets/png/iconUser.png" alt="">
+                <img class="IconUser" <?php echo $linkUserIcon ?>style="border-radius:50%" src="<?php echo $iconUser ?>" alt="">
                 <ul class="dropdown-menu Background">
                   <li><a class="dropdown-item Color" href="#"><img class="iconBtn" src="./assets/png/account.svg" alt=""> Minha conta</a></li>
                   <li><a class="dropdown-item Color" href="#"><img class="iconBtn" src="./assets/png/config.svg" alt=""> Configurações</a></li>

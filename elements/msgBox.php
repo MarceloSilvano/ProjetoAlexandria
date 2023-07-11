@@ -1,4 +1,3 @@
-<?php var_dump($_SESSION['cadastroErro'])?>
 <div class="msgBox">
 
     <?php if(!isset($_SESSION['start'])){?>

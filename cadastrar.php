@@ -40,7 +40,7 @@
   <div class="container-fluid Background row d-flex justify-content-center mt-5">
 
 
-  <form action="./phpActions/criarUsuario.php" class="needs-validation" style="width:400px" method="POST">
+  <form action="./phpActions/criarUsuario.php" class="needs-validation" style="width:400px" method="POST" enctype="multipart/form-data">
   <div class="mb-3 mt-3">
     <label for="username " class="form-label">Nome de usuário:</label>
     <input type="text" class="form-control" id="username" min="8" max="20" placeholder="marcelo123" name="username" required>
@@ -58,6 +58,10 @@
   <div class="mb-3">
     <label for="pwd-repeat" class="form-label">Repetir a senha:</label>
     <input type="password" class="form-control" id="pwd-repeat" placeholder="senha123" name="pswd-repeat" required>
+  </div>
+  <div class="mb-3">
+    <label for="foto" class="form-label">Foto de perfil:</label>
+    <input type="file" class="form-control" name="file">
   </div>
   <div class="d-flex justify-content-center">
     <button type="submit" class="btn btn-light btnNav m-2" style="width:150px;height:45px">Criar conta</button>
@@ -108,7 +112,6 @@ $(document).ready(function() {
     $('#username-length').text(message);
   });
 });
-
 
 // Função para validar a senha
 function validatePassword(password) {

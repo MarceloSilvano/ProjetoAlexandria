@@ -14,7 +14,7 @@ $queryEmail = mysqli_query($conexao, $sqlEmail);
 $valido = true;
 
 //validação do usuário
-if(strlen($user)<=8||strlen($user)>=20){
+if(strlen($user)<8||strlen($user)>20){
     $valido = false;
     echo "Usuario precisa ter de 8 a 20 caracteres<br>";
 }
@@ -55,6 +55,53 @@ if($senha<>$senhaR){
     echo "As senhas precisam ser iguais<br>";
 }
 
+//upload da foto
+ // Diretório de destino
+ if(isset($_FILES['file'])){
+
+     $uploadDir = 'uploadsFoto/';
+ 
+     // Verifica se o diretório de destino existe, caso contrário, cria-o
+     if (!is_dir($uploadDir)) {
+     mkdir($uploadDir, 0777, true);
+     }
+ 
+     // Obtém o nome original do arquivo
+     $fileName = $_FILES['file']['name'];
+ 
+     // Obtém a extensão do arquivo
+     $extension = pathinfo($fileName, PATHINFO_EXTENSION);
+ 
+     // Define o novo nome do arquivo com base no nome do usuário
+     $newFileName = $user . '.' . $extension;
+ 
+     // Caminho completo do arquivo de destino
+     $uploadPath = $uploadDir . $newFileName;
+ 
+     // Verifica se o arquivo é uma imagem válida
+     $validExtensions = ['png', 'jpg', 'jpeg'];
+     if (in_array(strtolower($extension), $validExtensions)) {
+     // Move o arquivo para o diretório de destino
+     if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadPath)) {
+         echo 'Upload realizado com sucesso!';
+     } else {
+         echo 'Ocorreu um erro ao realizar o upload do arquivo.';
+     }
+     } else {
+     echo 'Apenas arquivos PNG, JPG e JPEG são permitidos.';
+     }
+
+
+ }
+
+//verifica se há foto
+$auxFoto = explode('.',$nomeFoto);
+if(isset($auxFoto[1])){
+    $nomeFoto="'".$newFileName."'";
+}else{
+    $nomeFoto="NULL";
+}
+
 //verificar validade
 if($valido==true){
     echo "true";
@@ -62,9 +109,11 @@ if($valido==true){
     echo "false";
 }
 
+
+
 if($valido==true){
     $senha = md5($senha);
-    $sqlCreate = "INSERT INTO tb_users (username, password, email, foto, qntLivros, dataCriacao) VALUES ('$user','$senha','$email',NULL,0,'".date('Y-m-d')."')";
+    $sqlCreate = "INSERT INTO tb_users (username, password, email, foto, qntLivros, dataCriacao) VALUES ('$user','$senha','$email',$nomeFoto,0,'".date('Y-m-d')."')";
     $queryCreate = mysqli_query($conexao,$sqlCreate);
     header('location:../login.php');
 }else{
@@ -79,7 +128,7 @@ if(mysqli_affected_rows($conexao)>0){
 
 }else{
     echo "erro ao criar nova conta";
-    header('location:../cadastrar.php');
+   header('location:../cadastrar.php');
 
 }
 ?>
