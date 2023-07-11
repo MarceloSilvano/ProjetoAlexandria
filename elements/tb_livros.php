@@ -1,5 +1,4 @@
 <?php
-include('./phpFunctions/util.php');
 
 $sql = "SELECT * FROM `tb_livros`";
 $query = mysqli_query($conexao, $sql);

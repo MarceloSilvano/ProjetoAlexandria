@@ -1,5 +1,5 @@
 <?php
-include('../phpFunctions/util.php');
+include('../phpFunctions/conexao.php');
 $user = $_POST['username'];
 $email = $_POST['email'];
 $senha = $_POST['pswd'];
@@ -14,20 +14,10 @@ $queryEmail = mysqli_query($conexao, $sqlEmail);
 $valido = true;
 
 //validação do usuário
-if(strlen($user)<8||strlen($user)>20){
+$validacaoUsuario = validate_user($user,$queryUser);
+if($validacaoUsuario['valido']==false){
     $valido = false;
-    echo "Usuario precisa ter de 8 a 20 caracteres<br>";
-}
-
-$regex = "/^[a-zA-Z0-9_]{8,20}$/";
-if(!preg_match($regex, $user)){
-    $valido =false;
-    echo "Nome de usuario não pode conter caracteres especiais<br>";
-}
-
-if($queryUser->num_rows<>0){
-    $valido=false;
-    echo "O nome de usuário já existe<br>";
+    echo $validacaoUsuario['error'];
 }
 
 //verifica o email
@@ -115,10 +105,10 @@ if($valido==true){
     $senha = md5($senha);
     $sqlCreate = "INSERT INTO tb_users (username, password, email, foto, qntLivros, dataCriacao) VALUES ('$user','$senha','$email',$nomeFoto,0,'".date('Y-m-d')."')";
     $queryCreate = mysqli_query($conexao,$sqlCreate);
-    header('location:../login.php');
+    //header('location:../login.php');
 }else{
     $_SESSION['cadastroErro']=true;
-    header('location:../cadastrar.php');
+    //header('location:../cadastrar.php');
 
 }
 echo $sqlCreate;
@@ -128,7 +118,7 @@ if(mysqli_affected_rows($conexao)>0){
 
 }else{
     echo "erro ao criar nova conta";
-   header('location:../cadastrar.php');
+   //header('location:../cadastrar.php');
 
 }
 ?>
