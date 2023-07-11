@@ -1,10 +1,10 @@
 <div class="msgBox">
-    <?php if(!isset($_SESSION['start'])||1==1){
+    <?php if(!isset($_SESSION['start'])){
         echo exibir_mensagem("Bem vindo(a)!","Não repare a bagunça! Nosso site está em desenvolvimento :)");
         $_SESSION['start']=true;
-    } ?>
+    } 
 
-    <?php if(isset($_SESSION['cadastroConcluido'])&&$_SESSION['cadastroConcluido']==true){
+     if(isset($_SESSION['cadastroConcluido'])&&$_SESSION['cadastroConcluido']==true){
             echo exibir_mensagem("Parabéns!","Sua conta foi criada com sucesso");
             $_SESSION['cadastroConcluido']=false;
         }

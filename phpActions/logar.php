@@ -1,5 +1,5 @@
 <?php
-include('../phpFunctions/util.php');
+include('../phpFunctions/conexao.php');
 $usuario = $_POST['user'];
 $senha = md5($_POST['pswd']);
 

@@ -2,6 +2,7 @@
 <?php
  if(isset($_SESSION['login'])){
     $linkUserIcon = " data-bs-toggle='dropdown'";
+    $linkUpload = './addLivro.php';
 
     $username = $_SESSION['login'];
     $sqlUser = "SELECT * FROM `tb_users` WHERE username = '$username'";
@@ -14,6 +15,7 @@
       $iconUser = "./assets/png/iconUser.png";
     }
  }else{
+  $linkUpload = './login.php';
   $linkUserIcon = " data-bs-toggle='modal' data-bs-target='#loginModal'";
   $iconUser = "./assets/png/iconUser.png";
  }
@@ -30,7 +32,7 @@
           <img class="row d-flex justify-content-center" style="width:464px;" src="./assets/png/banner.png" alt="">
           <div>
             <div class="dropdown UserOptDiv">
-                <button class="btn btn-light btnNav"><img class="iconBtn" src="./assets/png/book.png" alt="">Enviar livro</button>
+               <a href="<?php echo $linkUpload ?>"> <button class="btn btn-light btnNav"><img class="iconBtn"  src="./assets/png/book.png" alt="">Enviar livro</button></a>
                 <img class="IconUser" <?php echo $linkUserIcon ?>style="border-radius:50%" src="<?php echo $iconUser ?>" alt="">
                 <ul class="dropdown-menu Background">
                   <li><a class="dropdown-item Color" href="#"><img class="iconBtn" src="./assets/png/account.svg" alt=""> Minha conta</a></li>

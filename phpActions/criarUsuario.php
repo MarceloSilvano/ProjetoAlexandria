@@ -80,17 +80,13 @@ if($senha<>$senhaR){
      } else {
      echo 'Apenas arquivos PNG, JPG e JPEG são permitidos.';
      }
+     $nomeFoto="'".$newFileName."'";
 
 
+ }else{
+    $nomeFoto="NULL";
  }
 
-//verifica se há foto
-$auxFoto = explode('.',$nomeFoto);
-if(isset($auxFoto[1])){
-    $nomeFoto="'".$newFileName."'";
-}else{
-    $nomeFoto="NULL";
-}
 
 //verificar validade
 if($valido==true){
@@ -105,10 +101,10 @@ if($valido==true){
     $senha = md5($senha);
     $sqlCreate = "INSERT INTO tb_users (username, password, email, foto, qntLivros, dataCriacao) VALUES ('$user','$senha','$email',$nomeFoto,0,'".date('Y-m-d')."')";
     $queryCreate = mysqli_query($conexao,$sqlCreate);
-    //header('location:../login.php');
+    header('location:../login.php');
 }else{
     $_SESSION['cadastroErro']=true;
-    //header('location:../cadastrar.php');
+    header('location:../cadastrar.php');
 
 }
 echo $sqlCreate;
@@ -118,7 +114,7 @@ if(mysqli_affected_rows($conexao)>0){
 
 }else{
     echo "erro ao criar nova conta";
-   //header('location:../cadastrar.php');
+   header('location:../cadastrar.php');
 
 }
 ?>
