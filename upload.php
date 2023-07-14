@@ -1,6 +1,6 @@
 
 <?php
-  include('./phpFunctions/util.php');
+  include('./phpFunctions/conexao.php');
   
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@
     <h1>Enviar Livro</h1>
     <p>* Campo obrigatório</p>
     <hr>
-    <form action="./phpActions/addLivro.php" method="POST">
+    <form action="./phpActions/addLivro.php" method="POST" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="titulo" class="form-label">Título:*</label>
         <input type="text" class="form-control" id="titulo" name="titulo" required>

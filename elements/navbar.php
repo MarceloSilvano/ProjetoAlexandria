@@ -2,7 +2,7 @@
 <?php
  if(isset($_SESSION['login'])){
     $linkUserIcon = " data-bs-toggle='dropdown'";
-    $linkUpload = './addLivro.php';
+    $linkUpload = './upload.php';
 
     $username = $_SESSION['login'];
     $sqlUser = "SELECT * FROM `tb_users` WHERE username = '$username'";

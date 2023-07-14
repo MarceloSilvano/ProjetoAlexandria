@@ -1,6 +1,6 @@
 
 <?php
-  include('./phpFunctions/util.php');
+  include('./phpFunctions/conexao.php');
   if(isset($_SESSION['login'])){
     if($_SESSION['msgLogin']==true){
       include('./elements/alert-login.php');

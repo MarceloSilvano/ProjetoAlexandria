@@ -13,11 +13,21 @@
             echo exibir_mensagem("Erro!","Houve um erro ao criar sua conta, tente novamente");
             $_SESSION['cadastroErro']=false;
         } 
+
      if(isset($_SESSION['login'])){
         if($_SESSION['msgLogin']==true){
             echo exibir_mensagem('Você está logado!',$_SESSION['login']);
             $_SESSION['msgLogin'] = false;
         }
       }
+
+      if(isset($_SESSION['msgLivroAdd'])){
+        if($_SESSION['msgLivroAdd']==true){
+            echo exibir_mensagem('Sucesso!','O livro foi adicionado com sucesso');
+            $_SESSION['msgLivroAdd'] = false;
+        }
+      }
+
+      // $_SESSION['msgLivroAdd']
     ?>
 </div>
