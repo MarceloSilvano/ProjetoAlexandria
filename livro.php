@@ -33,7 +33,44 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <title>Alexandria</title>
+    <title><?php echo $livro['titulo'] ?></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Função para registrar ação de like ou dislike
+            function registrarAcao(livro_id, acao) {
+                $.ajax({
+                    url: "like_dislike.php",
+                    type: "POST",
+                    data: {
+                        livro_id: '<?php echo $idLivro ?>',
+                        acao: acao
+                    },
+                    success: function(response) {
+                        // Atualiza os contadores de likes e dislikes na página
+                        var dados = JSON.parse(response);
+                        $("#likes").text(dados.likes);
+                        $("#dislikes").text(dados.dislikes);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            }
+
+            // Evento de clique no botão de like
+            $("#btn-like").click(function() {
+                var livro_id = $("#livro-id").val();
+                registrarAcao(livro_id, "like");
+            });
+
+            // Evento de clique no botão de dislike
+            $("#btn-dislike").click(function() {
+                var livro_id = $("#livro-id").val();
+                registrarAcao(livro_id, "dislike");
+            });
+        });
+    </script>
 </head>
 <body class="Background" >
 <?php include('./elements/msgBox.php') //inclui a caixa de mensagens ?>
@@ -54,6 +91,8 @@
   <div class="col-sm-3">
       <img class="pagLivro" src="./phpActions/uploadsCapa/<?php echo $livro['id'] ?>.jpg" alt="">
       <p style="font-size:12px;margin:none">Postado dia <?php echo $dataPost ?> por <a href="./user.php?user=<?php echo $livro['usuarioPost'] ?>"> <?php echo $livro['usuarioPost'] ?></a></p>
+      <button class="btn btn-light btnNav" id='btn-like'><img class="iconBtn" src="./assets/png/like.png" alt="">Gostei</button>
+      <button class="btn btn-light btnNav" id='btn-dislike'><img class="iconBtn" style="transform: rotate(180deg);" src="./assets/png/like.png" alt="">Não gostei</button>
   </div>
   <div class="col-sm-4">
   <h2><?php echo $livro['titulo']?></h2>
@@ -62,7 +101,8 @@
     <strong>Ano: </strong><br><?php echo $livro['ano'] ?><br>
     <strong>Formato: </strong><br>.pdf</p>
     <strong>Descrição: </strong><br><?php echo $livro['descricao'] ?></p>
-    <button class="btn btn-light btnNav"><img class="iconBtn"  src="./assets/png/downloads.png" alt="">Baixar PDF</button>
+
+    <a href="./phpActions/uploadsPdf/<?php echo $livro['id'] ?>.pdf" target="_blank"><button class="btn btn-light btnNav"><img class="iconBtn"  src="./assets/png/downloads.png" alt="">Baixar PDF</button></a>
     <button class="btn btn-light btnNav" style ="<?php echo $downloadAudio ?>"><img class="iconBtn"  src="./assets/png/downloads.png" alt="">Baixar Audio</button>
   </div>
 </div>
