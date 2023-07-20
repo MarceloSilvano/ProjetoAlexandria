@@ -23,6 +23,9 @@
     header('location:./index.php');
   }
 
+  //contar views
+  contar_visualizacao($idLivro,$conexao);
+
   //calcula porcentagem de like
   $likes = $livro['likes'];
   $dislikes = $livro['dislikes'];
@@ -169,9 +172,8 @@
     <strong>Autor: </strong><br><?php echo $livro['autor'] ?><br>
     <strong>Ano: </strong><br><?php echo $livro['ano'] ?><br>
     <strong>Formato: </strong><br>.pdf</p>
+    <strong>Visualizações: </strong><br><?php echo $livro['views'] ?></p>
     <strong>Descrição: </strong><br><?php echo $livro['descricao'] ?></p>
-    <p><strong>Gostaram desse livro:</strong></p>
-    <p>Não gostarão desse livro: </p>
 
     <a href="./phpActions/uploadsPdf/<?php echo $livro['id'] ?>.pdf" target="_blank"><button class="btn btn-light btnNav"><img class="iconBtn"  src="./assets/png/downloads.png" alt="">Baixar PDF</button></a>
     <button class="btn btn-light btnNav" style ="<?php echo $downloadAudio ?>"><img class="iconBtn"  src="./assets/png/downloads.png" alt="">Baixar Audio</button>

@@ -55,4 +55,9 @@ function exibir_mensagem($header,$body){
     </div>
 </div>";
 }
+
+function contar_visualizacao($id,$conexao){
+    $sql = "UPDATE tb_livros SET views = views + 1 WHERE id = '$id'";
+    $query = mysqli_query($conexao, $sql);
+}
 ?>
