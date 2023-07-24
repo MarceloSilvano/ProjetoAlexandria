@@ -9,7 +9,7 @@
     $queryUser = mysqli_query($conexao,$sqlUser);
     $userData = mysqli_fetch_assoc($queryUser);
 
-    if($userData['foto']<>NULL){
+    if($userData['foto']<>NULL&&file_exists('./phpActions/uploadsFoto/'.$userData['foto'])){
       $iconUser = './phpActions/uploadsFoto/'.$userData['foto'];
     }else{
       $iconUser = "./assets/png/iconUser.png";
