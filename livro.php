@@ -31,6 +31,7 @@
   $dislikes = $livro['dislikes'];
   $total = $likes+$dislikes;
   $percLike = $likes/$total*100;
+  $percLike = round($percLike,2);
   $percDislike = 100-$percLike;
 ?>
 <!DOCTYPE html>
@@ -157,7 +158,7 @@
 
 
   <div class="row">
-  <div class="col-sm-3">
+  <div class="col-sm-4">
       <img class="pagLivro" src="./phpActions/uploadsCapa/<?php echo $livro['id'] ?>.jpg" alt="">
       <p style="font-size:12px;margin:none">Postado dia <?php echo $dataPost ?> por <a href="./user.php?user=<?php echo $livro['usuarioPost'] ?>"> <?php echo $livro['usuarioPost'] ?></a></p>
       <div class="progress">
@@ -172,7 +173,7 @@
     <strong>Autor: </strong><br><?php echo $livro['autor'] ?><br>
     <strong>Ano: </strong><br><?php echo $livro['ano'] ?><br>
     <strong>Formato: </strong><br>.pdf</p>
-    <strong>Visualizações: </strong><br><?php echo $livro['views'] ?></p>
+    <strong>Visualizações: </strong><br><?php echo $livro['views']+1 ?></p>
     <strong>Descrição: </strong><br><?php echo $livro['descricao'] ?></p>
 
     <a href="./phpActions/uploadsPdf/<?php echo $livro['id'] ?>.pdf" target="_blank"><button class="btn btn-light btnNav"><img class="iconBtn"  src="./assets/png/downloads.png" alt="">Baixar PDF</button></a>

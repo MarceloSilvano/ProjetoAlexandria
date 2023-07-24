@@ -12,6 +12,7 @@ while($row = mysqli_fetch_assoc($query)){
 
     if($dislikes<>0){
         $percent = ($likes/$soma) * 100;
+        $percent = round($percent);
     }else{
         $percent = 100;
     }
