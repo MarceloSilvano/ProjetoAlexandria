@@ -90,6 +90,10 @@ class livro{
     }
 
     // Setters
+    public function setId($id) {
+        $this->id = $id;
+    }
+
     public function setTitulo($titulo) {
         $this->titulo = $titulo;
     }
@@ -164,6 +168,7 @@ class livro{
         $query = mysqli_query($conexao,$sql);
         $livro = mysqli_fetch_assoc($query);
 
+        $this->setId($id);
         $this->setTitulo($livro['titulo']);
         $this->setAutor($livro['autor']);
         $this->setDescricao($livro['descricao']);
@@ -180,6 +185,24 @@ class livro{
     }
 }
 
-$teste = new livro('64adfd7b95d8b');
-$teste->getDetalhes();
+class cardLivro extends livro{
+    function show(){
+        echo '<div class="card Card mt-3 ">';
+        echo '<a href="http://localhost/PROJETOS/Alexandria/livro.php?id='.$this->getId().'">';
+        echo '<a href="http://localhost/PROJETOS/Alexandria/livro.php?id='.$this->getId().'"><div class="card-header"><h5>'.$this->getTitulo().'</h5></div></a>';
+        echo '<div class="card-body d-flex justify-content-center">';
+        echo '<img class="Capa" width="175px" src="../phpActions/uploadsCapa/'.$this->getId().'.jpg" alt="">';
+        echo '</div>';
+        echo '<div class="card-footer CardFooter">';
+        echo $this->getAutor();
+        echo '<div class="IconsDiv d-flex">';
+        echo '<img class="IconCard" src="./assets/png/like.png" alt="">'.$this->getPorcentagem();
+        echo '<img class="IconCard" src="./assets/png/downloads.png" style="margin-left: 15px;" alt="">'.$this->getDownloads();
+        echo '</div>';
+        echo '</div>';
+        echo '</a>';
+        echo '</div>';
+    }
+}
+
 ?>
