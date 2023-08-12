@@ -63,8 +63,21 @@ class livro extends conexao{
         return $this->userPost;
     }
 
-    public function getDataPost() {
-        return $this->dataPost;
+    public function audioDownload(){
+        if($this->audio!=0){
+            return '<button class="btn btn-light btnNav"><img class="iconBtn"  src="./assets/png/downloads.png" alt="">Baixar Audio</button>';
+        }
+    }
+
+    public function getDataPost($formato=1) {
+
+        if($formato==1){
+            $dataPost = explode('-',$this->dataPost);
+            $dataPost = $dataPost['2']."/".$dataPost['1']."/".$dataPost['0'];
+            return $dataPost;
+        }else{
+            return $this->dataPost;
+        }
     }
 
     public function getLikes() {

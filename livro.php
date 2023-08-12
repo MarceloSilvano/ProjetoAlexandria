@@ -1,7 +1,17 @@
 <?php
   include('./phpFunctions/conexao.php');
   if(isset($_GET['id'])){
-    $idLivro = $_GET['id'];
+    $livro = new livro($_GET['id']);
+
+    if($livro->getAudio()==1){
+      $downloadAudio="";
+    }else{
+      $downloadAudio= "display:none;";
+    }
+
+    contar_visualizacao($livro->getId(),$conexao);
+
+   /* $idLivro = $_GET['id'];
     $sql = "SELECT * FROM `tb_livros` WHERE id='$idLivro'";
     $query = mysqli_query($conexao,$sql);
     
@@ -21,7 +31,7 @@
     }
   }else{
     header('location:./index.php');
-  }
+  */}/*
 
   //contar views
   contar_visualizacao($idLivro,$conexao);
@@ -32,7 +42,7 @@
   $total = $likes+$dislikes;
   $percLike = $likes/$total*100;
   $percLike = round($percLike,2);
-  $percDislike = 100-$percLike;
+  $percDislike = 100-$percLike;*/
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" >
@@ -44,7 +54,7 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <title><?php echo $livro['titulo'] ?></title>
+    <title><?php echo $livro->getTitulo() ?></title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -88,7 +98,7 @@
                     url: "like_dislike.php",
                     type: "POST",
                     data: {
-                        livro_id: '<?php echo $idLivro ?>',
+                        livro_id: '<?php echo $livro->getId() ?>',
                         acao: acao
                     },
                     success: function(response) {
@@ -159,25 +169,26 @@
 
   <div class="row">
   <div class="col-sm-4">
-      <img class="pagLivro" src="./phpActions/uploadsCapa/<?php echo $livro['id'] ?>.jpg" alt="">
-      <p style="font-size:12px;margin:none">Postado dia <?php echo $dataPost ?> por <a href="./user.php?user=<?php echo $livro['usuarioPost'] ?>"> <?php echo $livro['usuarioPost'] ?></a></p>
+      <img class="pagLivro" src="./phpActions/uploadsCapa/<?php echo $livro->getId() ?>.jpg" alt="">
+      <p style="font-size:12px;margin:none">Postado dia <?php echo $livro->getDataPost(1) ?> por <a href="./user.php?user=<?php echo $livro->getUserPost() ?>"> <?php echo $livro->getUserPost() ?></a></p>
       <div class="progress">
     
     </div>
-      <button class="btn btn-light btnNav" id='btn-like'><img class="iconBtn" src="./assets/png/like.png" alt=""><span id='likes'><?php echo $livro['likes']?></span></button>
-      <button class="btn btn-light btnNav" id='btn-dislike'><img class="iconBtn" style="transform: rotate(180deg);" src="./assets/png/like.png" alt=""><span id='dislikes'><?php echo $livro['dislikes']?></span></button>
+      <button class="btn btn-light btnNav" id='btn-like'><img class="iconBtn" src="./assets/png/like.png" alt=""><span id='likes'><?php echo $livro->getLikes()?></span></button>
+      <button class="btn btn-light btnNav" id='btn-dislike'><img class="iconBtn" style="transform: rotate(180deg);" src="./assets/png/like.png" alt=""><span id='dislikes'><?php echo $livro->getDislikes()?></span></button>
   </div>
   <div class="col-sm-4">
-  <h2><?php echo $livro['titulo']?></h2>
-    <p><strong>Título: </strong><br><?php echo $livro['titulo'] ?><br>
-    <strong>Autor: </strong><br><?php echo $livro['autor'] ?><br>
-    <strong>Ano: </strong><br><?php echo $livro['ano'] ?><br>
+  <h2><?php echo $livro->getTitulo();?></h2>
+    <p><strong>Título: </strong><br><?php echo $livro->getTitulo() ?><br>
+    <strong>Autor: </strong><br><?php echo $livro->getAutor() ?><br>
+    <strong>Ano: </strong><br><?php echo $livro->getAno() ?><br>
     <strong>Formato: </strong><br>.pdf</p>
-    <strong>Visualizações: </strong><br><?php echo $livro['views']+1 ?></p>
-    <strong>Descrição: </strong><br><?php echo $livro['descricao'] ?></p>
+    <strong>Visualizações: </strong><br><?php echo $livro->getViews()+1 ?></p>
+    <strong>Descrição: </strong><br><?php echo $livro->getDescricao() ?></p>
 
-    <a href="./phpActions/uploadsPdf/<?php echo $livro['id'] ?>.pdf" target="_blank"><button class="btn btn-light btnNav"><img class="iconBtn"  src="./assets/png/downloads.png" alt="">Baixar PDF</button></a>
-    <button class="btn btn-light btnNav" style ="<?php echo $downloadAudio ?>"><img class="iconBtn"  src="./assets/png/downloads.png" alt="">Baixar Audio</button>
+    <a href="./phpActions/uploadsPdf/<?php echo $livro->getId() ?>.pdf" target="_blank"><button class="btn btn-light btnNav"><img class="iconBtn"  src="./assets/png/readIcon.png" alt="">Ler Online</button></a>
+    <a href="./phpActions/uploadsPdf/<?php echo $livro->getId() ?>.pdf" download><button class="btn btn-light btnNav"><img class="iconBtn"  src="./assets/png/downloads.png" alt="">Baixar PDF</button></a>
+    <a href="./phpActions/uploadsAudio/<?php echo $livro->getAudio()?>" download><?php echo $livro->audioDownload()?></a>
   </div>
 </div>
   </div>
