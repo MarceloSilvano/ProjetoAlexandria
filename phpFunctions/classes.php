@@ -219,12 +219,12 @@ class gerarLivro extends conexao{
     private $sql;
     private $query;
 
-    public function gerarRecentes(){
+    private function gerar($sql){
         $cards = [];
         $this->conectar();
-        $this->sql = "SELECT id FROM `tb_livros` ORDER BY dataPost DESC";
+        $this->sql = $sql;
         $this->query = mysqli_query($this->conexao, $this->sql);
-        
+
         while($row = mysqli_fetch_assoc($this->query)){
             array_push($cards,new cardLivro($row['id']));
         }
@@ -232,25 +232,16 @@ class gerarLivro extends conexao{
         for($i=0;$i<count($cards);$i++){
             $cards[$i]->show();
         }
+    }
+
+    public function gerarRecentes(){
+        $this->gerar('SELECT id FROM `tb_livros` ORDER BY dataPost DESC');
     }
 
     
     public function gerarAntigos(){
-        $cards = [];
-        $this->conectar();
-        $this->sql = "SELECT id FROM `tb_livros` ORDER BY dataPost ASC";
-        $this->query = mysqli_query($this->conexao, $this->sql);
-
-        while($row = mysqli_fetch_assoc($this->query)){
-            array_push($cards,new cardLivro($row['id']));
-        }
-    
-        for($i=0;$i<count($cards);$i++){
-            $cards[$i]->show();
-        }
+        $this->gerar('SELECT id FROM `tb_livros` ORDER BY dataPost ASC');
     }
-   
-   
 }
 
 ?>
