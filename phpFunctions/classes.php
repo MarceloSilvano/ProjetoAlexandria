@@ -1,6 +1,20 @@
 <?php
 
-class livro{
+class conexao{
+public $conexao;
+   public function conectar(){
+    $db = [
+        'host' => 'localhost',
+        'user' => 'root',
+        'password' => '',
+        'database' => 'alexandria'
+    ];
+    
+    return $this->conexao = mysqli_connect($db['host'],$db['user'],$db['password'],$db['database']);
+   }
+}
+
+class livro extends conexao{
     private $id;
     private $titulo;
     private $autor;
@@ -74,6 +88,7 @@ class livro{
     }
 
     public function getDetalhes() {
+        echo "Id: " . $this->getId() . "<br>";
         echo "Título: " . $this->getTitulo() . "<br>";
         echo "Autor: " . $this->getAutor() . "<br>";
         echo "Descrição: " . $this->getDescricao() . "<br>";
@@ -155,17 +170,10 @@ class livro{
 
     //construtor
     function __construct($id){
-        $db = [
-            'host' => 'localhost',
-            'user' => 'root',
-            'password' => '',
-            'database' => 'alexandria'
-        ];
-        
-        $conexao = mysqli_connect($db['host'],$db['user'],$db['password'],$db['database']);
-        
-        $sql = "SELECT * FROM tb_livros";
-        $query = mysqli_query($conexao,$sql);
+        $this->conectar();
+    
+        $sql = "SELECT * FROM tb_livros WHERE id = '$id'";
+        $query = mysqli_query($this->conexao,$sql);
         $livro = mysqli_fetch_assoc($query);
 
         $this->setId($id);
@@ -191,18 +199,58 @@ class cardLivro extends livro{
         echo '<a href="http://localhost/PROJETOS/Alexandria/livro.php?id='.$this->getId().'">';
         echo '<a href="http://localhost/PROJETOS/Alexandria/livro.php?id='.$this->getId().'"><div class="card-header"><h5>'.$this->getTitulo().'</h5></div></a>';
         echo '<div class="card-body d-flex justify-content-center">';
-        echo '<img class="Capa" width="175px" src="../phpActions/uploadsCapa/'.$this->getId().'.jpg" alt="">';
+        echo '<img class="Capa" width="175px" src="http://localhost/PROJETOS/Alexandria/phpActions/uploadsCapa/'.$this->getId().'.jpg" alt="">';
         echo '</div>';
         echo '<div class="card-footer CardFooter">';
         echo $this->getAutor();
         echo '<div class="IconsDiv d-flex">';
-        echo '<img class="IconCard" src="./assets/png/like.png" alt="">'.$this->getPorcentagem();
-        echo '<img class="IconCard" src="./assets/png/downloads.png" style="margin-left: 15px;" alt="">'.$this->getDownloads();
+        echo '<img class="IconCard" src="http://localhost/PROJETOS/Alexandria/assets/png/like.png" alt="">'.$this->getPorcentagem();
+        echo '<img class="IconCard" src="http://localhost/PROJETOS/Alexandria/assets/png/downloads.png" style="margin-left: 15px;" alt="">'.$this->getDownloads();
         echo '</div>';
         echo '</div>';
         echo '</a>';
         echo '</div>';
     }
+}
+
+class gerarLivro extends conexao{
+
+
+    private $sql;
+    private $query;
+
+    public function gerarRecentes(){
+        $cards = [];
+        $this->conectar();
+        $this->sql = "SELECT id FROM `tb_livros` ORDER BY dataPost DESC";
+        $this->query = mysqli_query($this->conexao, $this->sql);
+        
+        while($row = mysqli_fetch_assoc($this->query)){
+            array_push($cards,new cardLivro($row['id']));
+        }
+    
+        for($i=0;$i<count($cards);$i++){
+            $cards[$i]->show();
+        }
+    }
+
+    
+    public function gerarAntigos(){
+        $cards = [];
+        $this->conectar();
+        $this->sql = "SELECT id FROM `tb_livros` ORDER BY dataPost ASC";
+        $this->query = mysqli_query($this->conexao, $this->sql);
+
+        while($row = mysqli_fetch_assoc($this->query)){
+            array_push($cards,new cardLivro($row['id']));
+        }
+    
+        for($i=0;$i<count($cards);$i++){
+            $cards[$i]->show();
+        }
+    }
+   
+   
 }
 
 ?>

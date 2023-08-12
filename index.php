@@ -39,7 +39,12 @@
      <?php include('./elements/search.php') ;//inclui a barra de pesquisa ?>
      
   </div>
-    <div class="row">    <?php include('./elements/tb_livros.php') //inclui os livros ?></div>
+    <div class="row">    <?php 
+    $livros = new gerarLivro;
+    $livros->gerarRecentes();
+    $antigos = new gerarLivro;
+    $antigos->gerarAntigos();
+    ?></div>
   </div>
   
 
